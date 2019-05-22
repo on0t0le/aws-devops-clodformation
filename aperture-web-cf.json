@@ -271,6 +271,14 @@
                         "Ref": "WebServerCapacity"
                     }
                 }
+            },
+            "UpdatePolicy": {
+                "AutoScalingRollingUpdate": {
+                    "MinInstancesInService": "1",
+                    "MaxBatchSize": "1",
+                    "PauseTime": "PT15M",
+                    "WaitOnResourceSignals": "true"
+                }
             }
         },
         "WebServerSecurityGroup": {
@@ -382,7 +390,7 @@
                                 "mysql-server": [],
                                 "mysql-libs": [],
                                 "httpd": [],
-                                "git":[]
+                                "git": []
                             }
                         },
                         "files": {
