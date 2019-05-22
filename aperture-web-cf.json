@@ -401,26 +401,26 @@
                                             "    <h1>Welcome to Aperture Science computer-aided Enrichment Center</h1>\n",
                                             "<div>\n",
                                             "<pre>\n",
-              ".,-:;//;:=,",
-          ". :H@@@MM@M#H/.,+%;,",
-       ",/X+ +M@@M@MM%=,-%HMMM@X/,",
-     "-+@MM; $M@@MH+-,;XMMMM@MMMM@+-",
-    ";@M@@M- XM@X;. -+XXXXXHHH@M@M#@/.",
-  ",%MM@@MH ,@%=             .---=-=:=,.",
-  "=@#@@@MX.,                -%HX$$%%%:;",
- "=-./@M@M$                   .;@MMMM@MM:",
- "X@/ -$MM/                    . +MM@@@M$",
-",@M@H: :@:                    . =X#@@@@-",
-",@@@MMX, .                    /H- ;@M@M=",
-".H@@@@M@+,                    %MM+..%#$.",
- "/MMMM@MMH/.                  XM@MH; =;",
-  "/%+%$XHH@$=              , .H@@@@MX,",
-   ".=--------.           -%H.,@@@@@MX,",
-   ".%MM@@@HHHXX$$$%+- .:$MMX =M@@MM%.",
-     "=XMMM@MM@MM#H;,-+HMM@M+ /MMMX=",
-       "=%@M@M#@$-.=$@MM@@@M; %M%=",
-         ",:+$+-,/H#MMMMMMM@= =,",
-               "=++%%%%+/:-.",
+"              .,-:;//;:=,\n",
+"        . :H@@@MM@M#H/.,+%;,\n",
+"       ,/X+ +M@@M@MM%=,-%HMMM@X/,\n",
+"     -+@MM; $M@@MH+-,;XMMMM@MMMM@+-\n",
+"    ;@M@@M- XM@X;. -+XXXXXHHH@M@M#@/.\n",
+"  ,%MM@@MH ,@%=             .---=-=:=,.\n",
+"  =@#@@@MX.,                -%HX$$%%%:;\n",
+" =-./@M@M$                   .;@MMMM@MM:\n",
+" X@/ -$MM/                    . +MM@@@M$\n",
+",@M@H: :@:                    . =X#@@@@-\n",
+",@@@MMX, .                    /H- ;@M@M=\n",
+".H@@@@M@+,                    %MM+..%#$.\n",
+" /MMMM@MMH/.                  XM@MH; =;\n",
+"  /%+%$XHH@$=              , .H@@@@MX,\n",
+"   .=--------.           -%H.,@@@@@MX,\n",
+"   .%MM@@@HHHXX$$$%+- .:$MMX =M@@MM%.\n",
+"     =XMMM@MM@MM#H;,-+HMM@M+ /MMMX=\n",
+"       =%@M@M#@$-.=$@MM@@@M; %M%=\n",
+"         ,:+$+-,/H#MMMMMMM@= =,\n",
+"               =++%%%%+/:-.\n",
 "</pre>\n",
                                             "</div>\n",
                                             "  </body>\n",
@@ -610,11 +610,6 @@
                                 "\n"
                             ]
                         ]
-                    }
-                },
-                "CreationPolicy" : {
-                    "ResourceSignal" : {
-                      "Timeout" : "PT5M"
                     }
                 }
             }
