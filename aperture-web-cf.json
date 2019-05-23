@@ -84,8 +84,16 @@
             "Default": "https://github.com/on0t0le/aperturesciense-website",
             "Description": "Website Github repo URL",
             "Type": "String",
-            "MinLength": "1",
+            "MinLength": "22",
+            "AllowedPattern":"^(https:\/\/github\\.com\/)([a-z\\d](?:[a-z\\d]|-(?=[a-z\\d])){0,38})\/(.+)$",
             "ConstraintDescription": "must be like https://github.com/user/repo"
+        },
+        "gitRepoBranch": {
+            "Default": "master",
+            "Description": "Website Github repo branch",
+            "Type": "String",
+            "MinLength": "1",
+            "ConstraintDescription": "must be like master"
         }
     },
     "Mappings": {
@@ -495,7 +503,20 @@
                     },
                     "configure_web": {
                         "sources": {
-                            "/tmp": "https://github.com/on0t0le/aperturesciense-website/tarball/master"
+                            "/tmp": {
+                                "Fn::Join": [
+                                    "",
+                                    [                                        
+                                        {
+                                            "Ref": "gitRepoURL"
+                                        },
+                                        "/tarball/",
+                                        {
+                                            "Ref": "gitRepoBranch"
+                                        }
+                                    ]
+                                ]
+                            }
                         },
                         "commands": {
                             "01_set_mysql_root_password": {
