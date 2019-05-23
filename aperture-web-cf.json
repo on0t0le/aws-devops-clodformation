@@ -495,17 +495,7 @@
                     },
                     "configure_web": {
                         "sources": {
-                            "/var/www/html/": {
-                                "Fn::Join": [
-                                    "",
-                                    [
-                                        {
-                                            "Ref": "gitRepoURL"
-                                        },
-                                        "/tarball"
-                                    ]
-                                ]
-                            }
+                            "/tmp": "https://github.com/on0t0le/aperturesciense-website/tarball/master"
                         },
                         "commands": {
                             "01_set_mysql_root_password": {
@@ -567,6 +557,10 @@
                                         ]
                                     ]
                                 }
+                            },
+                            "03_copy_site": {
+                                "command": "su - apache -c \"cp -R app/* /var/www/html/\"",
+                                "cwd" : "/tmp"
                             }
                         }
                     }
