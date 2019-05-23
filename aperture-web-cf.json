@@ -559,7 +559,7 @@
                                 }
                             },
                             "03_copy_site": {
-                                "command": "su - apache -c \"cp -R app/* /var/www/html/\"",
+                                "command": "/bin/cp -Rf app/* /var/www/html/ && chown apache. -R /var/www/html/",
                                 "cwd" : "/tmp"
                             }
                         }
