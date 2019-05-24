@@ -85,7 +85,7 @@
             "Description": "Website Github repo URL",
             "Type": "String",
             "MinLength": "22",
-            "AllowedPattern":"^(https:\/\/github\\.com\/)([a-z\\d](?:[a-z\\d]|-(?=[a-z\\d])){0,38})\/(.+)$",
+            "AllowedPattern": "^(https:\/\/github\\.com\/)([a-z\\d](?:[a-z\\d]|-(?=[a-z\\d])){0,38})\/(.+)$",
             "ConstraintDescription": "must be like https://github.com/user/repo"
         },
         "gitRepoBranch": {
@@ -457,6 +457,23 @@
                                 "owner": "apache",
                                 "group": "apache"
                             },
+                            "/var/www/html/.htaccess": {
+                                "content": {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "RewriteEngine On\n",
+                                            "RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n",
+                                            "RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n",
+                                            "RewriteRule ^ - [L]\n",
+                                            "RewriteRule ^ /index.html\n"
+                                        ]
+                                    ]
+                                },
+                                "mode": "000600",
+                                "owner": "apache",
+                                "group": "apache"
+                            },
                             "/tmp/setup.mysql": {
                                 "content": {
                                     "Fn::Join": [
@@ -488,6 +505,11 @@
                                 "group": "root"
                             }
                         },
+                        "commands": {
+                            "Allow routing in Angular": {
+                                "command": "sed -i 's/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf && service httpd restart"
+                            }
+                        },
                         "services": {
                             "sysvinit": {
                                 "mysqld": {
@@ -506,7 +528,7 @@
                             "/tmp": {
                                 "Fn::Join": [
                                     "",
-                                    [                                        
+                                    [
                                         {
                                             "Ref": "gitRepoURL"
                                         },
@@ -581,7 +603,7 @@
                             },
                             "03_copy_site": {
                                 "command": "/bin/cp -Rf app/* /var/www/html/ && chown apache. -R /var/www/html/",
-                                "cwd" : "/tmp"
+                                "cwd": "/tmp"
                             }
                         }
                     }
