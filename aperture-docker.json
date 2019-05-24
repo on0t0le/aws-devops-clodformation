@@ -150,11 +150,17 @@
                 "InstanceType": {
                     "Ref": "InstanceType"
                 },
-                "SecurityGroups": [
+                "SecurityGroupIds": [
                     {
-                        "Ref": "WebServerSecurityGroup"
+                        "Fn::GetAtt": [
+                            "WebServerSecurityGroup",
+                            "GroupId"
+                        ]
                     }
                 ],
+                "SubnetId": {
+                    "Ref": "Subnet"
+                },
                 "KeyName": {
                     "Ref": "KeyName"
                 },
@@ -179,7 +185,7 @@
             },
             "CreationPolicy": {
                 "ResourceSignal": {
-                    "Timeout": "PT5M"
+                    "Timeout": "PT15M"
                 }
             }
         },
@@ -220,7 +226,7 @@
                         {
                             "Fn::GetAtt": [
                                 "WebServerInstance",
-                                "PublicDnsName"
+                                "PublicIp"
                             ]
                         }
                     ]
