@@ -172,7 +172,7 @@
                                 "#!/bin/bash -xe\n",
                                 "yum update -y && yum install -y git curl\n",
                                 "amazon-linux-extras install docker\n",
-                                "service docker start && service docker enable\n",
+                                "systemctl start docker && systemctl enable docker\n",
                                 "curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose\n",
                                 "chmod +x /usr/local/bin/docker-compose\n",
                                 "git clone https://github.com/on0t0le/aws-docker-aperture.git aperture\n",
